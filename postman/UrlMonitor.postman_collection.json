@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "40aa1163-2dab-4d17-a1be-74015fd9327c",
+		"name": "UrlMonitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31237678"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\": \"\",\r\n    \"client_secret\": \"\",\r\n    \"audience\": \"https://urlmonitor\",\r\n    \"grant_type\": \"client_credentials\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-53tm81j5h4zbvbma.us.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-53tm81j5h4zbvbma",
+						"us",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEnpoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Google\",\r\n    \"url\": \"https://www.google.com\",\r\n    \"monitored_interval\": 70\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEndpointCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monitored_endpoints\": [\r\n        {\r\n            \"name\": \"DuckDuckGo\",\r\n            \"url\": \"https://duckduckgo.com/\",\r\n            \"monitored_interval\": 80\r\n        },\r\n        {\r\n            \"name\": \"Bing\",\r\n            \"url\": \"https://www.bing.com/\",\r\n            \"monitored_interval\": 90\r\n        },\r\n        {\r\n            \"name\": \"Yahoo\",\r\n            \"url\": \"https://www.yahoo.com/\",\r\n            \"monitored_interval\": 100\r\n        },\r\n        {\r\n            \"name\": \"WolframAlpha\",\r\n            \"url\": \"https://www.wolframalpha.com/\",\r\n            \"monitored_interval\": 110\r\n        },\r\n        {\r\n            \"name\": \"Wikipedia\",\r\n            \"url\": \"https://www.wikipedia.org/\",\r\n            \"monitored_interval\": 120\r\n        },\r\n        {\r\n            \"name\": \"Reddit\",\r\n            \"url\": \"https://www.reddit.com/\",\r\n            \"monitored_interval\": 130\r\n        },\r\n        {\r\n            \"name\": \"Twitter\",\r\n            \"url\": \"https://www.twitter.com/\",\r\n            \"monitored_interval\": 140\r\n        },\r\n        {\r\n            \"name\": \"LinkedIn\",\r\n            \"url\": \"https://www.linkedin.com/\",\r\n            \"monitored_interval\": 150\r\n        },\r\n        {\r\n            \"name\": \"Instagram\",\r\n            \"url\": \"https://www.instagram.com/\",\r\n            \"monitored_interval\": 160\r\n        },\r\n        {\r\n            \"name\": \"Pinterest\",\r\n            \"url\": \"https://www.pinterest.com/\",\r\n            \"monitored_interval\": 170\r\n        },\r\n        {\r\n            \"name\": \"Tumblr\",\r\n            \"url\": \"https://www.tumblr.com/\",\r\n            \"monitored_interval\": 180\r\n        },\r\n        {\r\n            \"name\": \"Snapchat\",\r\n            \"url\": \"https://www.snapchat.com/\",\r\n            \"monitored_interval\": 190\r\n        },\r\n        {\r\n            \"name\": \"WhatsApp\",\r\n            \"url\": \"https://www.whatsapp.com/\",\r\n            \"monitored_interval\": 200\r\n        },\r\n        {\r\n            \"name\": \"TikTok\",\r\n            \"url\": \"https://www.tiktok.com/\",\r\n            \"monitored_interval\": 210\r\n        },\r\n        {\r\n            \"name\": \"YouTube\",\r\n            \"url\": \"https://www.youtube.com/\",\r\n            \"monitored_interval\": 220\r\n        },\r\n        {\r\n            \"name\": \"Twitch\",\r\n            \"url\": \"https://www.twitch.tv/\",\r\n            \"monitored_interval\": 230\r\n        },\r\n        {\r\n            \"name\": \"Netflix\",\r\n            \"url\": \"https://www.netflix.com/\",\r\n            \"monitored_interval\": 240\r\n        },\r\n        {\r\n            \"name\": \"Hulu\",\r\n            \"url\": \"https://www.hulu.com/\",\r\n            \"monitored_interval\": 250\r\n        },\r\n        {\r\n            \"name\": \"Amazon\",\r\n            \"url\": \"https://www.amazon.com/\",\r\n            \"monitored_interval\": 260\r\n        },\r\n        {\r\n            \"name\": \"eBay\",\r\n            \"url\": \"https://www.ebay.com/\",\r\n            \"monitored_interval\": 270\r\n        },\r\n        {\r\n            \"name\": \"Alibaba\",\r\n            \"url\": \"https://www.alibaba.com/\",\r\n            \"monitored_interval\": 280\r\n        },\r\n        {\r\n            \"name\": \"Flipkart\",\r\n            \"url\": \"https://www.flipkart.com/\",\r\n            \"monitored_interval\": 150\r\n        },\r\n        {\r\n            \"name\": \"Walmart\",\r\n            \"url\": \"https://www.walmart.com/\",\r\n            \"monitored_interval\": 290\r\n        },\r\n        {\r\n            \"name\": \"Target\",\r\n            \"url\": \"https://www.target.com/\",\r\n            \"monitored_interval\": 300\r\n        },\r\n        {\r\n            \"name\": \"BestBuy\",\r\n            \"url\": \"https://www.bestbuy.com/\",\r\n            \"monitored_interval\": 310\r\n        },\r\n        {\r\n            \"name\": \"Costco\",\r\n            \"url\": \"https://www.costco.com/\",\r\n            \"monitored_interval\": 320\r\n        },\r\n        {\r\n            \"name\": \"IKEA\",\r\n            \"url\": \"https://www.ikea.com/\",\r\n            \"monitored_interval\": 330\r\n        },\r\n        {\r\n            \"name\": \"AliExpress\",\r\n            \"url\": \"https://www.aliexpress.com/\",\r\n            \"monitored_interval\": 340\r\n        },\r\n        {\r\n            \"name\": \"H&M\",\r\n            \"url\": \"https://www.hm.com/\",\r\n            \"monitored_interval\": 350\r\n        },\r\n        {\r\n            \"name\": \"Zara\",\r\n            \"url\": \"https://www.zara.com/\",\r\n            \"monitored_interval\": 360\r\n        },\r\n        {\r\n            \"name\": \"Uniqlo\",\r\n            \"url\": \"https://www.uniqlo.com/\",\r\n            \"monitored_interval\": 370\r\n        },\r\n        {\r\n            \"name\": \"Adidas\",\r\n            \"url\": \"https://www.adidas.com/\",\r\n            \"monitored_interval\": 380\r\n        },\r\n        {\r\n            \"name\": \"Nike\",\r\n            \"url\": \"https://www.nike.com/\",\r\n            \"monitored_interval\": 390\r\n        },\r\n        {\r\n            \"name\": \"Puma\",\r\n            \"url\": \"https://us.puma.com/\",\r\n            \"monitored_interval\": 400\r\n        },\r\n        {\r\n            \"name\": \"Reebok\",\r\n            \"url\": \"https://www.reebok.com/\",\r\n            \"monitored_interval\": 410\r\n        },\r\n        {\r\n            \"name\": \"Under Armour\",\r\n            \"url\": \"https://www.underarmour.com/\",\r\n            \"monitored_interval\": 420\r\n        },\r\n        {\r\n            \"name\": \"Columbia\",\r\n            \"url\": \"https://www.columbia.com/\",\r\n            \"monitored_interval\": 430\r\n        },\r\n        {\r\n            \"name\": \"Patagonia\",\r\n            \"url\": \"https://www.patagonia.com/\",\r\n            \"monitored_interval\": 440\r\n        },\r\n        {\r\n            \"name\": \"North Face\",\r\n            \"url\": \"https://www.thenorthface.com/\",\r\n            \"monitored_interval\": 450\r\n        },\r\n        {\r\n            \"name\": \"Google Drive\",\r\n            \"url\": \"https://www.google.com/drive/\",\r\n            \"monitored_interval\": 460\r\n        },\r\n        {\r\n            \"name\": \"Dropbox\",\r\n            \"url\": \"https://www.dropbox.com/\",\r\n            \"monitored_interval\": 470\r\n        },\r\n        {\r\n            \"name\": \"OneDrive\",\r\n            \"url\": \"https://onedrive.live.com/\",\r\n            \"monitored_interval\": 480\r\n        },\r\n        {\r\n            \"name\": \"TechCrunch\",\r\n            \"url\": \"https://techcrunch.com/\",\r\n            \"monitored_interval\": 490\r\n        },\r\n        {\r\n            \"name\": \"The Verge\",\r\n            \"url\": \"https://www.theverge.com/\",\r\n            \"monitored_interval\": 500\r\n        },\r\n        {\r\n            \"name\": \"Wired\",\r\n            \"url\": \"https://www.wired.com/\",\r\n            \"monitored_interval\": 510\r\n        },\r\n        {\r\n            \"name\": \"Kotaku\",\r\n            \"url\": \"https://kotaku.com/\",\r\n            \"monitored_interval\": 520\r\n        },\r\n        {\r\n            \"name\": \"IGN\",\r\n            \"url\": \"https://www.ign.com/\",\r\n            \"monitored_interval\": 530\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints-collection",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints-collection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeEndpointName",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gogle\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEndpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1ZVDNfd19FWk45d18xUklkaThkOCJ9.eyJpc3MiOiJodHRwczovL2Rldi01M3RtODFqNWg0emJ2Ym1hLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJpc0lDMjk5V1ZTUjA2U2M5ajVTcWJrWmcxYUt0NGFCekBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly91cmxtb25pdG9yIiwiaWF0IjoxNzE2MTQ2OTI4LCJleHAiOjE3MTYyMzMzMjgsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsImF6cCI6ImlzSUMyOTlXVlNSMDZTYzlqNVNxYmtaZzFhS3Q0YUJ6In0.H453eyGkV8-BvaVFxzWqxBwd2eTN2q0Mk8xOrdnaAa8EmCk2iKbM9TOr-ppDnGjUvuHZ1Slj7vGtZdBilIj01DfU0Sqbr5xUGwyJ9zd5-PA7ljQvsarooLM2KmcvccfnVyZvhRd5_eYCgA19YzlfpEqIOGgPDeBi8OrCjQT5LPrNewCiDQYYZnQAGdVvcGKMwWSY837Bp4DtZN6FSXOowF7p_QYwBXDjG1xIG8TW29sTYpwV39TBk4CV6Az5vvmU-y9jQDjUmZYM91ETxeNTnvZEyYRgkUJdBLbPM6X07yws2_b1E8Q4g77HYXz1_baDXVt9CMhLI-C3zW1OvNnC8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Google Scholar\",\r\n    \"url\": \"https://scholar.google.com/\",\r\n    \"monitored_interval\": 75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEndpoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEndpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/monitored-endpoints/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monitored-endpoints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

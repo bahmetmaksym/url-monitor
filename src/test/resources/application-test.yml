@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: urlmonitor
+  datasource:
+    url: jdbc:mysql://localhost:3306/UrlMonitor
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  flyway:
+    clean-disabled: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#  task:
+#    scheduling:
+#      enabled: false
+urlmonitor:
+  distributed-lock:
+    lock-key-prefix: "lock:monitored-endpoint:"
+
+logging:
+  level:
+    org.springframework: WARN  # Reduces logging of Spring framework components
+    org.hibernate: WARN  # Reduces logging of Hibernate components
+    org.hibernate.SQL: DEBUG  # Optional: Enable to see SQL queries
+    org.springframework.security: INFO  # Adjust according to necessity
+    org.testcontainers: INFO  # Show only important logs from Testcontainers
